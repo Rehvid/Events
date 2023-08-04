@@ -1,0 +1,20 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block title %}Reset your password{% endblock %}
+
+{% block body %}
+    <section class="vh-100">
+        <div class="container py-5 h-100">
+            <div class="d-flex justify-content-center align-items-center h-100 w-100">
+                <div class="card border-0 shadow col-4 p-5 m-5 rounded-2">
+                    <h1 class="h3 mb-3 font-weight-normal text-center">Reset your password</h1>
+
+                    {{ form_start(resetForm) }}
+                    {{ form_row(resetForm.plainPassword) }}
+                        <button class="btn btn-success">Reset password</button>
+                    {{ form_end(resetForm) }}
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

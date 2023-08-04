@@ -1,0 +1,7 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block body %}
+    {% for message in app.flashes('success') %}
+        {{ component('Alert', {message: message, hasCloseButton: true}) }}
+    {% endfor %}
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block title %}
+    Register
+{% endblock %}
+
+{% block body %}
+    <div class="form-wrapper">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="my-2 text-center mb-4">
+                        <h3 class="font-weight-bold">Create your account </h3>
+                    </div>
+                    {% if error is defined  %}
+                        {{ component('Alert', {message: error}) }}
+                    {% endif %}
+                    {{ form_start(form) }}
+                    {{ form_widget(form) }}
+                    <div class="d-flex flex-column">
+                        <button class="btn btn-success my-3">Register</button>
+                        <span class="text-center">
+                            Have an account?
+                            <a href="{{ path('login') }}">Login in</a>
+                        </span>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

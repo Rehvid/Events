@@ -1,0 +1,24 @@
+<nav class="navigation container-fluid bg-white  shadow justify-content-end">
+    {% if app.user is defined and app.user is not same as null %}
+    <div class="dropdown mx-4">
+        <div class="text-muted mx-2  d-flex align-items-center" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="mx-2 text-grey fw-medium">
+                {{ app.user.getFullName() }}
+            </span>
+                <i class="bi bi-person-circle fs-3"></i>
+        </div>
+        <ul class="dropdown-menu animate slideIn">
+            <li>
+                <a class="dropdown-item dropdown-item--last" href="{{ path('logout') }}">
+                    <i class="bi bi-box-arrow-right text-grey"></i>
+                    <span class="mx-1 text-grey">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    {% else %}
+        <div class="container d-flex justify-content-end">
+            <a class="nav-link fw-medium" href="{{ path('login') }}">Sign in</a>
+        </div>
+    {% endif %}
+</nav>

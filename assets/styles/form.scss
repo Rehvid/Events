@@ -1,0 +1,42 @@
+.form-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 2rem 1rem;
+
+  & .card {
+    border: none;
+    width: 400px;
+    margin: auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0,0,0,.16);
+  }
+
+  & .card-body {
+    padding: 2rem;
+  }
+
+  & .form-control {
+    height: auto;
+    padding: 0.76rem 1.25rem;
+    border: none;
+    background-color:  #f2f2f2;
+    border-radius: 0.75rem;
+    font-size: 0.875rem;
+    transition: all .3s;
+  }
+
+  & .form-label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.0125rem;
+  }
+
+
+  & .form-label.required:after, .col-form-label.required:after {
+    content:"*";
+    color:red;
+    margin-left: 4px;
+  }
+
+}

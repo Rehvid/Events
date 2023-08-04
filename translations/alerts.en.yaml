@@ -1,0 +1,4 @@
+alert:
+  registration: You need verify email before sign in!
+  verify_email: Your email verified successfully!
+  new_verify_email: We sent new email to verify

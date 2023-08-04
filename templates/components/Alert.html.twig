@@ -1,0 +1,6 @@
+<div class="alert alert-{{ type }} {% if hasCloseButton %} alert-dismissible {% endif %}" role="alert">
+    {{ message }}
+    {% if hasCloseButton %}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    {% endif %}
+</div>

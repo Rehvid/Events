@@ -1,0 +1,53 @@
+
+
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(121,9,9,1) 51%, rgba(35,153,183,1) 86%, rgba(0,212,255,1) 100%);
+}
+
+.navigation {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 2rem;
+}
+
+.dropdown .dropdown-menu {
+    border: none;
+    color: #858796;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15);
+}
+
+.dropdown-menu .dropdown-item:active {
+    background: #f8f9fa;
+}
+
+.dropdown-menu .dropdown-item--last {
+    margin-top: 0.5rem;
+    border-top: 1px solid #dee2e6;
+}
+
+.animate {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
+
+.slideIn {
+    animation-name: slideIn;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+    0% {
+        opacity: 0;
+    }
+}
