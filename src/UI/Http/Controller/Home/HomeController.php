@@ -10,8 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractRenderController
 {
-    // TODO: Dodać translacje do exceptionow, dodać routingi chronione, stworzyć od nowa migracje i zrobić gita potem zastanowic sie co dalej!
-
     #[Route('/', name: 'home')]
     public function index(): Response
     {
