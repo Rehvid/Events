@@ -1,1 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
+
+.border-right {
+  border-right: 1px solid #dee2e6;
+}
+
+.profile-grid {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  grid-gap: 2rem;
+}

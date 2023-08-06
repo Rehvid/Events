@@ -4,12 +4,20 @@
   align-items: center;
   padding: 2rem 1rem;
 
+  &--large {
+    min-height: unset;
+  }
+
   & .card {
     border: none;
     width: 400px;
     margin: auto;
     border-radius: 10px;
     box-shadow: 0 6px 15px rgba(0,0,0,.16);
+  }
+
+  &--large .card {
+    width: 1000px;
   }
 
   & .card-body {
