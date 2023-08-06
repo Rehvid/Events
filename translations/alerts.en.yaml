@@ -2,3 +2,6 @@ alert:
   registration: You need verify email before sign in!
   verify_email: Your email verified successfully!
   new_verify_email: We sent new email to verify
+  delete_account: Your account has been deleted successfully!
+  update_profile: Your account information has been updated successfully!
+  change_password: Password has been updated successfully!
