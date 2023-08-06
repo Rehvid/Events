@@ -1,0 +1,52 @@
+<div class="my-2 mb-4">
+    <h4 class="font-weight-bold text-center">Account Settings </h4>
+</div>
+
+<ul class="nav nav-pills flex-column">
+    <li class="nav-item my-2">
+        <a class="nav-link {% if app.request.get('_route') is same as 'user_profile' %} active {% endif %}" aria-current="page" href="{{ path('user_profile') }}">Account Information</a>
+    </li>
+    <li class="nav-item my-2">
+        <a
+                class="nav-link {% if app.request.get('_route') is same as 'user_change_password' %} active {% endif %}"
+                href="{{ path('user_change_password') }}"
+        >
+            Change Password
+        </a>
+    </li>
+    <li class="nav-item my-2">
+        <a class="nav-link"
+           href="#"
+           data-bs-toggle="modal"
+           data-bs-target="#accountDelete"
+        >
+            Close Account
+        </a>
+    </li>
+</ul>
+
+<div class="modal fade" id="accountDelete" tabindex="-1" aria-labelledby="accountDelete"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="accountDelete">Do you want to delete your account?</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+            </div>
+            <div class="modal-body d-flex justify-content-between ">
+                <a class="btn btn-danger w-25 fw-bold "
+                   href="{{ path('user_delete', {id: app.user.id}) }}">
+                    <i class="bi bi-trash"></i>
+                    Delete
+                </a>
+                <button type="button" class="btn btn-dark w-25 fw-bold"
+                        data-bs-dismiss="modal" aria-label="Close">
+                    <i class="bi bi-x"></i>
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+

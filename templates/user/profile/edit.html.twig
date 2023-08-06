@@ -1,0 +1,41 @@
+{% extends 'layouts/app.html.twig' %}
+
+{% block title %}Account Settings{% endblock %}
+
+{% block body %}
+
+    <div class="form-wrapper form-wrapper--large ">
+        <div class="container">
+
+            <div class="card card-large">
+                <div class="mb-2">
+                    {% for message in app.flashes('success') %}
+                        {{ component('Alert', {message: message, hasCloseButton: true}) }}
+                    {% endfor %}
+                </div>
+                <div class="card-body profile-grid">
+                    <div class="border-right px-4">
+                           {% include 'user/profile/navigation.html.twig' %}
+                    </div>
+
+
+                    <div>
+                        <div class="my-2 text-center mb-4">
+                            <h4 class="font-weight-bold">Account Information </h4>
+                        </div>
+                        <div class="mx-4">
+
+                            {{ form_start(form) }}
+                            {{ form_widget(form) }}
+                            <div class="d-flex flex-column">
+                                <button class="btn btn-success my-3">Submit</button>
+                            </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
