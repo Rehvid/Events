@@ -3,12 +3,12 @@
 namespace App\Application\User\Query\FindAll;
 
 use App\Domain\User\Exception\UserNotFoundException;
-use App\Domain\User\Repository\UserRepositoryInterface;
+use App\Infrastructure\User\Repository\UserRepository;
 use App\Shared\Application\Query\QueryHandlerInterface;
 
 class FindAllQueryHandler implements QueryHandlerInterface
 {
-    public function __construct(private readonly UserRepositoryInterface $userRepository)
+    public function __construct(private readonly UserRepository $userRepository)
     {
     }
 
