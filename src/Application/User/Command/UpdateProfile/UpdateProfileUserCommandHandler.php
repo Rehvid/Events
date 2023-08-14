@@ -15,9 +15,10 @@ class UpdateProfileUserCommandHandler implements CommandHandlerInterface
 
     public function __invoke(UpdateProfileUserCommand $updateProfileUserCommand): void
     {
-        $user = $this->userRepository->findByEmail($updateProfileUserCommand->getEmail());
+        $user = $updateProfileUserCommand->getUser();
 
-        $user->setFirstname($updateProfileUserCommand->getFirstname())
+        $user
+            ->setFirstname($updateProfileUserCommand->getFirstname())
             ->setLastname($updateProfileUserCommand->getLastname())
             ->setEmail($updateProfileUserCommand->getEmail());
 

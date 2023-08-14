@@ -21,14 +21,18 @@ class ProfileController extends AbstractRenderController
     #[Route('user/profile', name: 'user_profile', methods: ['GET', 'HEAD', 'PATCH'])]
     public function edit(Request $request): Response
     {
-        $form = $this->createForm(ProfileUserFormType::class, $this->getUser(), ['method' => 'PATCH']);
+        /** @var User $user */
+        $user = $this->getUser();
+
+        $form = $this->createForm(ProfileUserFormType::class, $user, ['method' => 'PATCH']);
         $form->handleRequest($request);
 
         if ($this->isFormSubmittedAndValid($form)) {
             $this->dispatch(new UpdateProfileUserCommand(
                 firstname: $form->get('firstname')->getData(),
                 lastname: $form->get('lastname')->getData(),
-                email: $form->get('email')->getData()
+                email: $form->get('email')->getData(),
+                user: $user,
             ));
 
             $this->addFlash('success', $this->translator->trans('alert.update_profile', domain: 'alerts'));
