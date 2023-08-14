@@ -24,5 +24,8 @@
 
 
     <extensions>
+        <bootstrap class="RobinIngelbrecht\PHPUnitPrettyPrint\PhpUnitExtension">
+            <parameter name="displayProfiling" value="true"/>
+        </bootstrap>
     </extensions>
 </phpunit>
