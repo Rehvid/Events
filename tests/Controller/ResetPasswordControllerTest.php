@@ -94,11 +94,11 @@ class ResetPasswordControllerTest extends WebTestCase
         ]);
 
         try {
-            $handleStamp = $this->queryBus->dispatch(new FindByEmailQuery(email: $email));
+            $handleStamp = $this->queryBus->dispatch(new FindByEmailQuery(email: $user->getEmail()));
             $userWithNewPassword = $handleStamp->last(HandledStamp::class)->getResult();
             $this->assertNotEquals($userWithNewPassword->getPassword(), $user->getPassword());
             $this->assertNotNull($userWithNewPassword->getUpdatedAt());
-        } catch (\Exception $exception) {
+        } catch (\Exception) {
             $this->expectException(HandlerFailedException::class);
         }
 
