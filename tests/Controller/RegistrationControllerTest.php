@@ -4,7 +4,6 @@ namespace Controller;
 
 use App\Domain\User\User;
 use Faker\Factory;
-use Faker\Provider\Address;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class RegistrationControllerTest extends WebTestCase

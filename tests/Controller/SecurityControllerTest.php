@@ -6,7 +6,6 @@ use App\Application\User\Command\Register\RegisterUserCommand;
 use App\Application\User\Query\FindByEmail\FindByEmailQuery;
 use App\Domain\User\Role;
 use Faker\Factory;
-use http\Client;
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\Messenger\Exception\HandlerFailedException;
 use Symfony\Component\Messenger\Stamp\HandledStamp;

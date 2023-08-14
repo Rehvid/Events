@@ -28,7 +28,6 @@ class ResetPasswordControllerTest extends WebTestCase
         parent::setUp();
 
         $this->client = self::createClient();
-        $this->entityManager = $this->getContainer()->get('doctrine')->getManager();
         $this->commandBus = $this->getContainer()->get('command.bus');
         $this->queryBus = $this->getContainer()->get('query.bus');
         $this->faker = Factory::create();
